@@ -9,7 +9,7 @@ interface Props {
 const Display: React.FC<Props> = ({ buffer }) => {
   return (
     <div className="m-2 p-2 bg-blue-200" role="textbox">
-      {buffer}
+      &nbsp;{buffer}
     </div>
   );
 };
