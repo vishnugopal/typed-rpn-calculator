@@ -1,5 +1,7 @@
 import React, { useReducer } from "react";
+import { ThemeProvider } from "styled-components";
 import Display from "./components/Display";
+import lightTheme from "./lightTheme";
 
 import "./styles.css";
 import DigitButton from "./components/DigitButton";
@@ -18,23 +20,25 @@ function App() {
   };
 
   return (
-    <div className="max-w-md m-auto">
-      <Display buffer={state.buffer} />
-      <DigitButton digit={7} onClick={digitButtonClick} />
-      <DigitButton digit={8} onClick={digitButtonClick} />
-      <DigitButton digit={9} onClick={digitButtonClick} />
-      <OperatorButton operator="+" />
-      <br />
-      <DigitButton digit={4} onClick={digitButtonClick} />
-      <DigitButton digit={5} onClick={digitButtonClick} />
-      <DigitButton digit={6} onClick={digitButtonClick} />
-      <OperatorButton operator="-" />
-      <br />
-      <DigitButton digit={1} onClick={digitButtonClick} />
-      <DigitButton digit={2} onClick={digitButtonClick} />
-      <DigitButton digit={3} onClick={digitButtonClick} />
-      <EnterButton />
-    </div>
+    <ThemeProvider theme={lightTheme}>
+      <div className="max-w-md m-auto">
+        <Display buffer={state.buffer} />
+        <DigitButton digit={7} onClick={digitButtonClick} />
+        <DigitButton digit={8} onClick={digitButtonClick} />
+        <DigitButton digit={9} onClick={digitButtonClick} />
+        <OperatorButton operator="+" />
+        <br />
+        <DigitButton digit={4} onClick={digitButtonClick} />
+        <DigitButton digit={5} onClick={digitButtonClick} />
+        <DigitButton digit={6} onClick={digitButtonClick} />
+        <OperatorButton operator="-" />
+        <br />
+        <DigitButton digit={1} onClick={digitButtonClick} />
+        <DigitButton digit={2} onClick={digitButtonClick} />
+        <DigitButton digit={3} onClick={digitButtonClick} />
+        <EnterButton />
+      </div>
+    </ThemeProvider>
   );
 }
 
